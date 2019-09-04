@@ -1,0 +1,67 @@
+
+/* The login and registration form wrapper */
+/*Header*/
+.form-block-header{
+  text-align: center;
+  padding: 20px 0 0;
+  background: white;
+  box-shadow: 1px 1px 10px #d4d4d4;
+  border-radius: 10px;
+}
+.form-block-header img{
+  transform: translateX(-2px);
+}
+.form-block-header h2{
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin: 0;
+  margin-top: -10px;
+  color: #ccc;
+}
+
+.form-element{
+  padding: 28px 20px 20px;
+  background: #ececec;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  text-align: center;
+}
+
+.form-group{
+  margin-bottom: 20px;
+}
+
+.input-group, .form-control{
+  height: 43px;
+  outline: none;
+}
+
+.input-group-addon{
+  padding: 7px 13px 6px;
+  font-size: 25px;
+}
+
+label{
+  text-transform: uppercase;
+}
+
+.back{
+  margin-right: 50px;
+
+}
+
+
+a{
+  color: #ffa500;
+  margin-left: 48%;
+  margin-top: 10%;
+
+
+}
+
+.terms{
+
+
+
+}

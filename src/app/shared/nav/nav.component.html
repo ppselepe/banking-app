@@ -1,0 +1,19 @@
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" routerLink="/accounts"><img align="center" src="../../../assets/images/momentum.png" width="150" height="70" alt="logo"></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li  *ngIf="isAuthenticated"><a routerLink="/accounts">Accounts</a></li>
+      <li  *ngIf="isAuthenticated"><a routerLink="/transact">Transact</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li *ngIf="!isAuthenticated"><a routerLink="/login">Login</a></li>
+      <li *ngIf="isAuthenticated"><a (click)="logout()">Logout</a></li>
+    </ul>
+  </div>
+</nav>
+<br/>
+<br/>
+<br/>
