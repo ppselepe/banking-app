@@ -1,0 +1,16 @@
+
+h3 {
+  margin-left: 18px;
+}
+
+.panel-primary {
+    border-color: #337ab7;
+
+    width: 50vw;
+    margin: auto;
+}
+.panel-primary>.panel-heading {
+    color: #fff;
+    background-color: #01196C;
+    border-color: #337ab7;
+}

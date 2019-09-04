@@ -1,0 +1,11 @@
+<app-spinner></app-spinner>
+
+<h3>Accounts</h3> <br> <br> <br>
+<a  routerLink = "/new-account" class="btn btn-info"
+   role="button">New Account
+</a> <br><br>
+<main>
+  <a  routerLink = "/detail/{{account}}" class="kachel"*ngFor="let account of clientDetails?.accounts;index as i">
+    <span style="color:#FBFBFC" class="glyphicon glyphicon-folder-close"><h2>Account:{{account}}</h2></span>
+  </a>
+</main>
