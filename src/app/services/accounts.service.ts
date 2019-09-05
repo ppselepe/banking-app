@@ -14,6 +14,11 @@ import { AuthService } from '../services/auth.service';
 export class AccountsService {
   private user;
 
+  /**
+  * Create an instance of accountService.
+  *
+  * @Param {HttpClient} - the instance of the HttpClient being iinjected.
+  */
   constructor(private http: HttpClient, private authService:AuthService ) {
     this.authService.getUserInfo().subscribe(user => {
       this.user = user;
@@ -21,6 +26,9 @@ export class AccountsService {
 
   }
 
+  /**
+   * Getting user accounts and details
+   */
   getUser():Observable<Account> {
     let api = 'https://momentum-retail-practical-test.firebaseio.com/';
     return this.authService.user.pipe(take(1),exhaustMap(user => {
@@ -35,6 +43,10 @@ export class AccountsService {
     }));
   }
 
+  /**
+  * Get account  balance and overdraft.
+  * @Param {string} accountNummber
+  */
   getAccountDetail(accountNumber: string) {
     let api = 'https://momentum-retail-practical-test.firebaseio.com/';
     return this.authService.user.pipe(take(1),exhaustMap(user => {
@@ -52,6 +64,12 @@ export class AccountsService {
     }));
   }
 
+/**
+ *  Handles  the deposit and withdrawal.
+ * @param {string} accountNumber -  account to deposit to or withdraw from
+ * @param {number} amount - amount to be updated.
+ * @param {string} overdraft - overdraft amount.
+ */
   accountUpdate(accountNumber, amount, overdraft) {
     let api = 'https://momentum-retail-practical-test.firebaseio.com/';
     return this.authService.user.pipe(take(1),exhaustMap(user => {
@@ -65,6 +83,11 @@ export class AccountsService {
       return resData;
     }));
   }
+
+  /**
+  * Creates a new user account
+  * @Param {string} account
+  */
 
   createAccount(account)  {
     let api = 'https://momentum-retail-practical-test.firebaseio.com/';

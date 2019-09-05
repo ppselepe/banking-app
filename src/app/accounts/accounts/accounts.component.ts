@@ -11,39 +11,10 @@ import { SpinnerService } from '../../shared/spinner/spinner.service';
 })
 export class AccountsComponent implements OnInit {
 
-  private leina:string;
-  private response: any
-  public name: string;
-//public test = "Foo";
-
-
-  constructor(private accountsService: AccountsService,private spinnerService: SpinnerService) { }
+  constructor() { }
 
   ngOnInit() {
-    //this.getUserAcc()
-  }
 
-  getUserAcc() {
-    //this.spinnerService.show();
-    this.accountsService.getUser().subscribe(accounts => {
-      this.response = accounts.name;
-      console.log("response",this.response);
-
-      // this.isLoading = "Bob Builderd";
-    }, (onError)  => {}
-    , () => {
-
-
-    });
-  }
-
-  does() {
-    this.leina = "phuti";
-    console.log("the buttons work");
-    this.accountsService.getUser().subscribe( response => {
-       this.response = response;
-       console.log("response s",this.response);
-    });
   }
 
 }

@@ -46,7 +46,7 @@ export class DepositComponent implements OnInit {
     const balance = parseInt(this.accountDetail.balance) + parseInt(amount);
 
     this.accountsService.accountUpdate(accountNumber, balance, this.accountDetail.overdraft).subscribe(acc => {
-      console.log(acc);
+    
     });
   }
 }

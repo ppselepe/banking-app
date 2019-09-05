@@ -26,7 +26,8 @@ export class AuthService {
 
   /**
   * Create an instance of AuthService
-  * @Param {HttpClient} - the instance of the HttpClient being iinjected
+  * User BehaviorSubject emit user response data to subscribing components.
+  * @Param {HttpClient} - the instance of the HttpClient being iinjected.
   */
   user = new BehaviorSubject<User>(null);
   constructor(private http:HttpClient, private router: Router  ) {
@@ -111,7 +112,6 @@ export class AuthService {
     }
 
     public getUserInfo() {
-      console.log("User Infor");
       return this.user.asObservable();
     }
 

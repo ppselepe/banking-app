@@ -15,7 +15,13 @@ export class AccountDetailComponent implements OnInit {
   public accountDetail: Balance;
   public accountNumber: string;
 
-  constructor( private accountService: AccountsService, private route: ActivatedRoute, private location: Location ) { }
+
+  /**
+  * Create an instance of AccountDetailComponent
+  * @Param {AccountsService} - the instance of the AccountsService being injected
+  * @Param {ActivatedRoute} - the instance of the ActivatedRoute being injected
+  */
+  constructor( private accountService: AccountsService, private route: ActivatedRoute ) { }
 
   ngOnInit() {
     this.getAccountDetail();

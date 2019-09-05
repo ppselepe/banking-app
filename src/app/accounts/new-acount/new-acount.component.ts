@@ -12,6 +12,11 @@ export class NewAcountComponent implements OnInit {
 
   private clientDetails;
 
+
+  /**
+  * Create an instance of NewAcountComponent
+  * @Param {AccountsService} - the instance of the AccountsService being injected
+  */
   constructor(private accountsService: AccountsService) { }
 
   ngOnInit() {

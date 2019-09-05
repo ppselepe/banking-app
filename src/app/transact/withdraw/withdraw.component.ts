@@ -13,8 +13,11 @@ export class WithdrawComponent implements OnInit {
   private userAccount;
   private accountDetail;
 
-  constructor(private accountsService: AccountsService,
-              private toastr: ToastrService) { }
+  /**
+  * Create an instance of WithdrawComponent
+  * @Param {AccountsService} - the instance of the AccountsService being injected
+  */
+  constructor(private accountsService: AccountsService) { }
 
   ngOnInit() {
     this.getUserAcc();
@@ -48,10 +51,10 @@ export class WithdrawComponent implements OnInit {
     const balance = parseInt(this.accountDetail.balance) - parseInt(amount);
 
     this.accountsService.accountUpdate(accountNumber, balance, this.accountDetail.overdraft).subscribe(acc => {
-      console.log(acc);
+
     }, (OnError) => {},
     () => {
-    
+
     });
 
   }

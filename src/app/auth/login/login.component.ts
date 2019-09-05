@@ -16,6 +16,12 @@ export class LoginComponent implements OnInit {
   isLoading = true;
   error: string = null;
 
+
+  /**
+  * Create an instance of LoginComponent
+  * @Param {AuthService} - the instance of the AuthService being injected
+  * @Param {Router} - the instance of the Router being injected
+  */
   constructor( private authService: AuthService, private router: Router) { }
 
   ngOnInit() {
@@ -34,13 +40,12 @@ export class LoginComponent implements OnInit {
       this.isLoading = true;
       this.authService.login(email, password).subscribe(
         responseData => {
-          // console.log("responseData",responseData);
+
           this.isLoading = false;
           this.router.navigate(['./accounts']);
 
         },
         errorRes =>{
-          // console.log("error", errorRes);
           this.error = errorRes;
 
 
@@ -48,6 +53,6 @@ export class LoginComponent implements OnInit {
         }
       )
       form.reset();
-    //this.authService.login();
+
   }
 }
